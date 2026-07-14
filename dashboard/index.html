@@ -1,6 +1,6 @@
 <title>게임사 실적 트래커</title>
 
-<p class="sr-only">한국 게임사 15곳(크래프톤, 넥슨, 엔씨소프트, 카카오게임즈, 데브시스터즈, 컴투스, 넷마블, NHN, 네오위즈, 펄어비스, 위메이드, 시프트업, 웹젠, 스마일게이트, 해긴)의 분기·연간 매출 추이와 주요 타이틀 지표, 한국 구글플레이·앱스토어 매출 Top50 순위, PC게임(PC방·스팀) 순위를 보여주는 대시보드입니다.</p>
+<p class="sr-only">한국 게임사 15곳(크래프톤, 넥슨, 엔씨소프트, 카카오게임즈, 데브시스터즈, 컴투스, 넷마블, NHN, 네오위즈, 펄어비스, 위메이드, 시프트업, 웹젠, 스마일게이트, 해긴)의 분기·연간 매출 추이와 주요 타이틀 지표, 한국 구글플레이·앱스토어 매출 Top100 순위, PC게임(PC방·스팀) 순위를 보여주는 대시보드입니다.</p>
 
 <div class="dash" id="dash">
 
@@ -56,20 +56,20 @@
 
     <div class="rank-tables">
       <div class="rank-table-wrap">
-        <h3>App Store 코리아 <span class="rank-badge">매출 Top 50</span></h3>
+        <h3>App Store 코리아 <span class="rank-badge">매출 Top 100</span></h3>
         <div class="table-scroll">
           <table id="asTable"><thead><tr><th class="num">#</th><th class="num">변동</th><th>타이틀</th><th>퍼블리셔</th><th>장르</th><th class="num">연도</th><th class="num">월매출</th><th>누적매출</th><th>MAU</th></tr></thead><tbody></tbody></table>
         </div>
       </div>
       <div class="rank-table-wrap">
-        <h3>Google Play 코리아 <span class="rank-badge">매출 Top 50</span></h3>
+        <h3>Google Play 코리아 <span class="rank-badge">매출 Top 100</span></h3>
         <div class="table-scroll">
           <table id="gpTable"><thead><tr><th class="num">#</th><th class="num">변동</th><th>타이틀</th><th>퍼블리셔</th><th>장르</th><th class="num">연도</th><th class="num">월매출</th><th>누적매출</th><th>MAU</th></tr></thead><tbody></tbody></table>
         </div>
       </div>
     </div>
 
-    <p class="rank-legend">† 표시는 최신 월매출이 아닌 과거 시점·회사 전체·추정 평균 등 참고용 수치입니다 (셀에 마우스를 올리면 설명이 보입니다). 매출·누적매출·MAU는 모두 MobileIndex/Sensor Tower/Apple 공식 스토어 메타데이터 등을 인용한 추정치이며 공식 공시가 아닙니다. 100위까지는 무료 소스로 확인 불가하여 App Store·Google Play 각 50위까지만 수록했습니다 (계속 확장 시도 중).</p>
+    <p class="rank-legend">† 표시는 최신 월매출이 아닌 과거 시점·회사 전체·추정 평균 등 참고용 수치입니다 (셀에 마우스를 올리면 설명이 보입니다). App Store 51~100위와 Google Play 1~50위는 MobileIndex 실시간 차트 기준(2026-07-14). <b>Google Play 51~100위는 AppBrain(3rd-party, 2026-07-14 스냅샷)이라는 별도 소스</b>라 MobileIndex와 순위 산정 방식이 달라 1~50위와 완전히 동일한 기준선상에 있지 않습니다 — 51위 이하 구간은 장르·출시연도·누적매출·MAU 컬럼도 아직 수집 전이라 "—"로 표시됩니다. 매출·누적매출·MAU는 모두 MobileIndex/Sensor Tower/Apple 공식 스토어 메타데이터 등을 인용한 추정치이며 공식 공시가 아닙니다.</p>
   </section>
 
   <section id="panelPc" class="panel" hidden role="tabpanel" aria-labelledby="tabBtnPc">
@@ -386,7 +386,7 @@
 
   // --- 앱 순위 데이터 ---
   // row: [rank, title, publisher, genre, year, monthlyStr, cumulativeStr, mauStr, companyId]
-  var AS_TOP50 = [
+  var AS_TOP100 = [
     [1,"Pokémon GO","Niantic, Inc.","액션·RPG(GPS)","2017","","전세계 누적 약 90억달러(10주년)","약 55만명(추정,전체OS)",null],
     [2,"메이플 키우기","NEXON Company","RPG·어드벤처","2025","285†","","",  "nexon"],
     [3,"WOS: 화이트아웃 서바이벌","Century Games","전략·시뮬레이션","2023","331","전세계 누적 약 34억달러","",null],
@@ -436,10 +436,60 @@
     [47,"냥찍 히어로즈","RIFF GAMES","액션·RPG","2026","","","",null],
     [48,"불사용사 키우기","SUPERBOX. Inc","RPG·시뮬레이션","2026","","","",null],
     [49,"한게임 로얄홀덤","NHN Corp.","카지노·카드","2023","","","","nhn"],
-    [50,"그놈은 드래곤","GameTree Entertainment","전략·RPG","2026","","","",null]
+    [50,"그놈은 드래곤","GameTree Entertainment","전략·RPG","2026","","","",null],
+    [51,"세븐나이츠 리버스","Netmarble Corporation","","","","","","netmarble"],
+    [52,"카트라이더 러쉬플러스","NEXON Company","","","","","",null],
+    [53,"슬레이어 키우기","GEAR2","","","","","",null],
+    [54,"한게임 로얄홀덤","NHN Corp.","","","","","","nhn"],
+    [55,"쿠키런: 오븐브레이크","Devsisters","","","","","","devsisters"],
+    [56,"미스터리 타운: 합성 게임","Cedar Games Studio","","","","","",null],
+    [57,"AION2","NC Corp.","","","","","","ncsoft"],
+    [58,"토이 삼국","RHINOS","","","","","",null],
+    [59,"시티 데몬헌터즈: 각성자들","Dawn Breaking Network Technology","","","","","",null],
+    [60,"2026 프로야구GO!","HAEGIN Co., Ltd.","","","","","","haegin"],
+    [61,"오늘의 꽃","Ujoy Games Limited","","","","","",null],
+    [62,"두근두근타운","XD Entertainment Co., Ltd.","","","","","",null],
+    [63,"한게임포커 클래식 - 7포커 홀덤 섯다 훌라 슬롯","NHN Corp.","","","","","","nhn"],
+    [64,"클래시 오브 클랜","Supercell","","","","","",null],
+    [65,"탑 히어로즈: 영웅의 시대","River Game HK Limited","","","","","",null],
+    [66,"우마무스메 프리티 더비","Kakao Games Corp.","","","","","","kakaogames"],
+    [67,"세포 특공대","Snap Brain Games","","","","","",null],
+    [68,"마구마구 2026: 풀체인지","Netmarble Corporation","","","","","","netmarble"],
+    [69,"메이플스토리M","NEXON Company","","","","","","nexon"],
+    [70,"Forge Master – Idle RPG","Lessmore GmbH","","","","","",null],
+    [71,"붕괴: 스타레일","COGNOSPHERE PTE. LTD.","","","","","",null],
+    [72,"클래시 로얄","Supercell","","","","","",null],
+    [73,"쿠키런","Devsisters","","","","","","devsisters"],
+    [74,"그레이 사가","Leniu Games","","","","","",null],
+    [75,"몬길: STAR DIVE","Netmarble Corporation","","","","","","netmarble"],
+    [76,"컴투스프로야구2026","Com2uS Corp.","","","","","","com2us"],
+    [77,"라스트 Z: 서바이벌 슈터","Omnilojo Pte Ltd","","","","","",null],
+    [78,"할리우드 머지","VoyagerOne","","","","","",null],
+    [79,"프로젝트 세카이 컬러풀 스테이지! feat.하츠네 미쿠","Nuverse","","","","","",null],
+    [80,"변신 키우기","Billionairegames","","","","","",null],
+    [81,"더 코지 플로리스트","RiftSky Games","","","","","",null],
+    [82,"Toon Blast","Peak Games","","","","","",null],
+    [83,"Age of Origins: Tower Defense","HK Ke Mo software Co., Limited","","","","","",null],
+    [84,"피쉬돔(Fishdom)","Playrix","","","","","",null],
+    [85,"파운데이션: 우주 전선","FunPlus International AG","","","","","",null],
+    [86,"피망 뉴맞고: 고스톱으로 대한민국 1등","NEOWIZ","","","","","","neowiz"],
+    [87,"템빨용사: 픽셀 아이템 머지 RPG","5minlab Co., Ltd.","","","","","",null],
+    [88,"쿠키런: 킹덤","Devsisters","","","","","","devsisters"],
+    [89,"창세기전 모바일 - 서풍의 광시곡","LINE Games","","","","","",null],
+    [90,"Project Makeover","Magic Tavern, Inc.","","","","","",null],
+    [91,"라그나로크 오리진 클래식","Gravity Game Vision Limited","","","","","",null],
+    [92,"헬로키티 마이 드림 스토어","ACTGames Co., Ltd.","","","","","",null],
+    [93,"갓깨비 키우기","Joy Net Games","","","","","",null],
+    [94,"Minecraft","Mojang","","","","","",null],
+    [95,"Domino Dreams™","SuperPlay","","","","","",null],
+    [96,"나이트 크로우","Wemade Co., Ltd.","","","","","","wemade"],
+    [97,"뱀피르","Netmarble Corporation","","","","","","netmarble"],
+    [98,"좀비고등학교","AWESOMEPIECE","","","","","",null],
+    [99,"콜 오브 드래곤즈","Farlight Games","","","","","",null],
+    [100,"Dark War: Survival","Omnilojo Pte Ltd","","","","","",null]
   ];
 
-  var GP_TOP51 = [
+  var GP_TOP100 = [
     [1,"오딘: 발할라 라이징","Kakao Games Corp.","MMORPG","2021","","글로벌 누적 약9억달러; 국내누적1조원+","","kakaogames"],
     [2,"SOL: enchant","Netmarble","MMORPG","2026","","","","netmarble"],
     [3,"WOS: 화이트아웃 서바이벌","Century Games","전략(SLG)","2023","331","글로벌 누적20억달러+(25개월); 한국비중26.5%","",null],
@@ -489,7 +539,57 @@
     ["-","Zenless Zone Zero","COGNOSPHERE(HoYoverse)","액션RPG","2024","","올해출시작 중 최단기간 글로벌매출1억달러 돌파","",null],
     ["-","Genshin Impact","COGNOSPHERE","오픈월드액션RPG","2020","","글로벌 누적40억달러+; 한국누적 약2.5억달러(6.2%)","",null],
     ["-","한게임 섯다&맞고","NHN Corp.","카드(고스톱)","","","","","nhn"],
-    ["-","뮤 모나크2","Webzen Inc.","MMORPG","2024","","","","webzen"]
+    ["-","뮤 모나크2","Webzen Inc.","MMORPG","2024","","","","webzen"],
+    [51,"우마무스메 프리티 더비","Kakao Games Corp.","","","","","","kakaogames"],
+    [52,"Flambé®: Merge & Cook","Microfun Limited","","","","","",null],
+    [53,"Slayer Legend : Idle RPG","GEAR2","","","","","",null],
+    [54,"Township","Playrix","","","","","",null],
+    [55,"뮤 모나크2","Webzen Inc.","","","","","","webzen"],
+    [56,"League of Legends: Wild Rift","Riot Games, Inc","","","","","",null],
+    [57,"Homescapes","Playrix","","","","","",null],
+    [58,"Mystery Town: Merge Games","Cedar Games Studio","","","","","",null],
+    [59,"Disney Solitaire","SuperPlay.","","","","","",null],
+    [60,"Top Heroes: Kingdom Saga","RiverGame","","","","","",null],
+    [61,"Honkai: Star Rail","COGNOSPHERE PTE. LTD.","","","","","",null],
+    [62,"Undying Hero: Idle RPG","SUPERBOX Inc","","","","","",null],
+    [63,"Dragon Traveler","HongKong GameTree Limited","","","","","",null],
+    [64,"한게임 신맞고: 대한민국 원조 고스톱","NHN Corp.","","","","","","nhn"],
+    [65,"RF ONLINE NEXT","Netmarble","","","","","","netmarble"],
+    [66,"리니지2M","NC Corporation","","","","","","ncsoft"],
+    [67,"Travel Town - Merge Adventure","Magmatic Games LTD","","","","","",null],
+    [68,"Legend of Avatar","BillionaireGames","","","","","",null],
+    [69,"Lost Sword 1-Year Anniversary","Wemade Connect","","","","","","wemade"],
+    [70,"피망 뉴맞고: 고스톱 대표 맞고 게임","NEOWIZ corp","","","","","","neowiz"],
+    [71,"Merge Cooking®","Happibits Game","","","","","",null],
+    [72,"Hearthstone","Blizzard Entertainment, Inc.","","","","","",null],
+    [73,"컴투스프로야구2026","Com2uS","","","","","","com2us"],
+    [74,"Hollywood Merge","VoyagerOne IE","","","","","",null],
+    [75,"Dark War Survival","Omnilojo Pte Ltd","","","","","",null],
+    [76,"Tiles Survive!","FunPlus International AG","","","","","",null],
+    [77,"로드나인","Smilegate, Inc.","","","","","","smilegate"],
+    [78,"WPL:Texas Hold'em, MTT, Sit&Go","Zempot INC.","","","","","",null],
+    [79,"Summoners War X Frieren","Com2uS","","","","","","com2us"],
+    [80,"RAVEN2","Netmarble","","","","","","netmarble"],
+    [81,"Horde War: Summon of Avengers","JoyTogether Games","","","","","",null],
+    [82,"Zombie Waves","Fun Formula","","","","","",null],
+    [83,"임진왜란: 조선의 반격","JOYCITY Corp.","","","","","",null],
+    [84,"메이플스토리M","NEXON Company","","","","","","nexon"],
+    [85,"Overgeared Hero: Merge RPG","5minlab Corp.","","","","","",null],
+    [86,"갓깨비 키우기-999뽑기 증정","Joy Nice Games","","","","","",null],
+    [87,"Fishdom","Playrix","","","","","",null],
+    [88,"ArcheAge WAR","Kakao Games Corp.","","","","","","kakaogames"],
+    [89,"Heartopia","XD Entertainment Co., Ltd.","","","","","",null],
+    [90,"State of Survival: Zombie War","FunPlus International AG","","","","","",null],
+    [91,"나이트 크로우","Wemade Co., Ltd","","","","","","wemade"],
+    [92,"Merge Teahouse","X.P. Games","","","","","",null],
+    [93,"한게임 로얄 홀덤","NHN Corp.","","","","","","nhn"],
+    [94,"뮤 모나크","Webzen Inc.","","","","","","webzen"],
+    [95,"Cat Hero : Idle RPG","Gameduo","","","","","",null],
+    [96,"추노 키우기","DwG","","","","","",null],
+    [97,"오늘의 꽃","Ujoy Games","","","","","",null],
+    [98,"리니지2 레볼루션","Netmarble","","","","","","netmarble"],
+    [99,"Domino Dreams™","SuperPlay.","","","","","",null],
+    [100,"2026 프로야구GO!","HAEGIN Co., Ltd.","","","","","","haegin"]
   ];
 
   // Only prior baseline we have: the very first snapshot (2026-07-13), Top20 only, per store.
@@ -763,8 +863,8 @@
   renderTicks();
   updateScrub(8);
   renderUnlistedGrid();
-  renderRankTable("asTable", AS_TOP50, "app_store");
-  renderRankTable("gpTable", GP_TOP51, "google_play");
+  renderRankTable("asTable", AS_TOP100, "app_store");
+  renderRankTable("gpTable", GP_TOP100, "google_play");
   renderOnestore();
   renderGametrics();
   renderSteamKr();

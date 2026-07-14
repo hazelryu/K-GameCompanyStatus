@@ -357,12 +357,19 @@
     return (cur-prev)/Math.abs(prev)*100;
   }
 
-  function deltaHtml(cur, prev, labelSuffix){
+  function deltaHtml(cur, prev, unit, labelSuffix){
     var d = delta(cur, prev);
     if(d===null) return '<div class="stat-delta flat">전분기 데이터 없음</div>';
     var cls = d>0.05 ? "up" : (d<-0.05 ? "down" : "flat");
     var arrow = d>0.05 ? "▲" : (d<-0.05 ? "▼" : "▶");
-    return '<div class="stat-delta '+cls+'">'+arrow+' '+Math.abs(d).toFixed(1)+'% '+(labelSuffix||"전분기 대비")+'</div>';
+    var suffix = labelSuffix||"전분기 대비";
+    // A tiny/near-zero base (e.g. a one-off low quarter) makes the % swing meaningless — show the absolute change instead.
+    if(Math.abs(d) > 300 || Math.abs(prev) < 100){
+      var diff = cur - prev;
+      var diffText = (diff>=0?"+":"-") + fmtWon(Math.abs(diff), unit);
+      return '<div class="stat-delta '+cls+'" title="전분기 기저(' + fmtWon(prev, unit) + ')가 작아 %증감이 왜곡돼 절대값으로 표시">'+arrow+' '+diffText+' '+suffix+'</div>';
+    }
+    return '<div class="stat-delta '+cls+'">'+arrow+' '+Math.abs(d).toFixed(1)+'% '+suffix+'</div>';
   }
 
   function sparklineSvg(series, selIdx, colorVar){
@@ -394,8 +401,8 @@
     html += '<div class="card-head"><span class="dot"></span><h3>'+c.name+'</h3><span class="badge">'+c.badge+'</span></div>';
     html += sparklineSvg(c.revenue, selIdx, c.colorVar);
     html += '<div class="stat-row">';
-    html += '<div class="stat"><div class="stat-label">매출 ('+PERIOD_LABELS[selIdx]+')</div><div class="stat-value">'+fmtWon(rev,c.unit)+'</div>'+deltaHtml(rev,prevRev)+'</div>';
-    html += '<div class="stat"><div class="stat-label">영업이익</div><div class="stat-value">'+fmtWon(op,c.unit)+'</div>'+deltaHtml(op,prevOp)+'</div>';
+    html += '<div class="stat"><div class="stat-label">매출 ('+PERIOD_LABELS[selIdx]+')</div><div class="stat-value">'+fmtWon(rev,c.unit)+'</div>'+deltaHtml(rev,prevRev,c.unit)+'</div>';
+    html += '<div class="stat"><div class="stat-label">영업이익</div><div class="stat-value">'+fmtWon(op,c.unit)+'</div>'+deltaHtml(op,prevOp,c.unit)+'</div>';
     html += '</div>';
     html += '<ul class="titles">'+c.titles.map(function(t){return '<li>'+t+'</li>';}).join("")+'</ul>';
     html += '<a class="src-link" target="_blank" rel="noopener" href="'+REPO+c.file+'">GitHub에서 자세히 보기 ↗</a>';
@@ -413,8 +420,8 @@
     var seriesForSpark = c.revenue.map(function(v){return v;});
     html += sparklineSvg(seriesForSpark, yearIdx, c.colorVar);
     html += '<div class="stat-row">';
-    html += '<div class="stat"><div class="stat-label">매출 (FY'+c.years[yearIdx]+')</div><div class="stat-value">'+fmtWon(rev,c.unit)+'</div>'+deltaHtml(rev,prevRev,"전년 대비")+'</div>';
-    html += '<div class="stat"><div class="stat-label">영업이익</div><div class="stat-value">'+fmtWon(op,c.unit)+'</div>'+deltaHtml(op,prevOp,"전년 대비")+'</div>';
+    html += '<div class="stat"><div class="stat-label">매출 (FY'+c.years[yearIdx]+')</div><div class="stat-value">'+fmtWon(rev,c.unit)+'</div>'+deltaHtml(rev,prevRev,c.unit,"전년 대비")+'</div>';
+    html += '<div class="stat"><div class="stat-label">영업이익</div><div class="stat-value">'+fmtWon(op,c.unit)+'</div>'+deltaHtml(op,prevOp,c.unit,"전년 대비")+'</div>';
     html += '</div>';
     html += '<ul class="titles">'+c.titles.map(function(t){return '<li>'+t+'</li>';}).join("")+'</ul>';
     html += '<a class="src-link" target="_blank" rel="noopener" href="'+REPO+c.file+'">GitHub에서 자세히 보기 ↗</a>';

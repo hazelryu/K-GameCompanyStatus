@@ -18,6 +18,19 @@
 
   <section id="panelCompanies" class="panel" role="tabpanel" aria-labelledby="tabBtnCompanies">
 
+    <div class="agg-chart-wrap">
+      <div class="agg-chart-head">
+        <h2 class="agg-title">상장 13개사 분기 매출 비교</h2>
+        <p class="agg-sub">2024 Q1 ~ 2026 Q1, 전 구간 억원(KRW) 환산. 그래프 위에 마우스를 올리면(모바일은 탭) 해당 분기 전체 회사 순위가 보입니다.</p>
+      </div>
+      <div class="agg-chart-body">
+        <div class="agg-svg-holder" id="aggChartHolder"></div>
+        <div class="agg-tooltip" id="aggTooltip"></div>
+      </div>
+      <div class="agg-legend" id="aggLegend"></div>
+      <p class="rank-legend">넥슨은 억엔(JPY) 공시를 <b id="aggFxNote">약 1엔=9.3원</b> 환율로 환산한 근사치입니다(실시간 환율 아님, 비교용). 점선은 카드 색상을 재사용한 5개사(네오위즈·펄어비스·위메이드·시프트업·웹젠)를 실선 그룹과 구분한 표시입니다. <b>NHN은 게임 외 결제·클라우드·커머스를 포함한 회사 전체 매출</b>이라 다른 회사들과 단순 비교 시 과대평가될 수 있습니다(게임 부문만 보려면 아래 카드 참고). 범례를 클릭하면 해당 회사 선을 흐리게/선명하게 토글할 수 있습니다.</p>
+    </div>
+
     <div class="scrubber-wrap">
       <div class="scrubber-label">
         <span class="scrubber-eyebrow">분기 선택 &middot; 상장 13개사</span>
@@ -34,6 +47,19 @@
     <div class="card-grid" id="listedGrid"></div>
 
     <h2 class="section-label">비상장 2개사 &middot; 연간(DART 감사보고서 기준)</h2>
+
+    <div class="agg-chart-wrap agg-chart-wrap--small">
+      <div class="agg-chart-head">
+        <h2 class="agg-title">스마일게이트·해긴 연간 매출 비교</h2>
+        <p class="agg-sub">회계연도별(FY), 단위 억원. 두 회사의 연도 범위가 달라 겹치는 구간만 비교 가능합니다.</p>
+      </div>
+      <div class="agg-chart-body">
+        <div class="agg-svg-holder" id="unlistedChartHolder"></div>
+        <div class="agg-tooltip" id="unlistedTooltip"></div>
+      </div>
+      <div class="agg-legend" id="unlistedLegend"></div>
+    </div>
+
     <div class="card-grid" id="unlistedGrid"></div>
 
   </section>
@@ -169,6 +195,32 @@
   .scrubber-ticks span{font-size:10px; color:var(--muted); font-variant-numeric:tabular-nums;}
 
   .section-label{font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); margin:24px 0 12px;}
+
+  .agg-chart-wrap{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px 18px; margin-bottom:20px;}
+  .agg-chart-wrap--small{margin:12px 0 16px;}
+  .agg-title{font-size:15px; font-weight:700; margin:0 0 2px;}
+  .agg-sub{font-size:11.5px; color:var(--muted); margin:0 0 10px;}
+  .agg-chart-body{position:relative;}
+  .agg-svg-holder{width:100%;}
+  .agg-svg-holder svg{width:100%; height:auto; display:block; overflow:visible;}
+  .agg-gridline{stroke:var(--grid); stroke-width:1;}
+  .agg-axis-text{fill:var(--muted); font-size:10px; font-variant-numeric:tabular-nums;}
+  .agg-line{fill:none; stroke-width:2; opacity:0.85;}
+  .agg-line--dashed{stroke-dasharray:5 3;}
+  .agg-crosshair{stroke:var(--muted); stroke-width:1; stroke-dasharray:3 3; pointer-events:none;}
+  .agg-hit{fill:transparent; cursor:crosshair;}
+  .agg-tooltip{position:absolute; top:8px; right:8px; min-width:190px; max-width:240px; background:var(--page); border:1px solid var(--border); border-radius:8px; padding:8px 10px; font-size:11.5px; box-shadow:0 4px 14px rgba(0,0,0,0.12); pointer-events:none;}
+  .agg-tooltip .tt-period{font-weight:700; font-size:12px; margin-bottom:5px; color:var(--ink);}
+  .agg-tooltip .tt-row{display:flex; align-items:center; gap:6px; padding:1.5px 0; color:var(--ink-2); white-space:nowrap;}
+  .agg-tooltip .tt-row .tt-dot{width:8px; height:8px; border-radius:50%; flex:none;}
+  .agg-tooltip .tt-row .tt-name{flex:1; overflow:hidden; text-overflow:ellipsis;}
+  .agg-tooltip .tt-row .tt-val{font-variant-numeric:tabular-nums; font-weight:600; color:var(--ink);}
+  .agg-legend{display:flex; flex-wrap:wrap; gap:6px 14px; margin-top:10px;}
+  .agg-legend-item{display:flex; align-items:center; gap:5px; font-size:11px; color:var(--ink-2); cursor:pointer; padding:2px 4px; border-radius:4px;}
+  .agg-legend-item:hover{background:var(--accent-wash);}
+  .agg-legend-item.is-dim{opacity:0.35;}
+  .agg-legend-swatch{width:14px; height:0; border-top:2px solid; flex:none;}
+  .agg-legend-swatch.is-dashed{border-top-style:dashed;}
 
   .card-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(258px, 1fr)); gap:14px;}
   .card{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px;}
@@ -730,6 +782,113 @@
     return svg;
   }
 
+  var NEXON_FX_RATE = 9.3; // 1 JPY ≈ 9.3 KRW, rough approximation for chart comparability only — not a live rate.
+  var DASHED_IDS = {neowiz:true, pearlabyss:true, wemade:true, shiftup:true, webzen:true};
+
+  function niceMax(v){
+    if(v<=0) return 100;
+    var mag = Math.pow(10, Math.floor(Math.log(v)/Math.LN10));
+    var n = v/mag;
+    var step = n<=1?1:n<=2?2:n<=5?5:10;
+    return step*mag;
+  }
+
+  function renderMultiLineChart(opts){
+    // opts: {svgHolderId, tooltipId, legendId, labels, series:[{id,name,colorVar,dashed,values,unit}], defaultUnit}
+    var W=900, H=300, padL=64, padR=16, padT=14, padB=34;
+    var plotW = W-padL-padR, plotH = H-padT-padB;
+    var labels = opts.labels, series = opts.series;
+    var xs = labels.length-1 || 1;
+    var allVals = [];
+    series.forEach(function(s){ s.values.forEach(function(v){ if(v!==null && v!==undefined) allVals.push(v); }); });
+    var maxV = allVals.length ? Math.max.apply(null, allVals) : 100;
+    var yMax = niceMax(maxV*1.08);
+    function X(i){ return padL + (i/xs)*plotW; }
+    function Y(v){ return padT + plotH - (v/yMax)*plotH; }
+
+    var svg = '<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+ (opts.ariaLabel||'회사별 매출 비교 차트') +'">';
+    // gridlines + y labels
+    var ticks = 5;
+    for(var t=0;t<=ticks;t++){
+      var val = yMax*t/ticks;
+      var y = Y(val);
+      svg += '<line class="agg-gridline" x1="'+padL+'" y1="'+y.toFixed(1)+'" x2="'+(W-padR)+'" y2="'+y.toFixed(1)+'"/>';
+      svg += '<text class="agg-axis-text" x="'+(padL-8)+'" y="'+(y+3).toFixed(1)+'" text-anchor="end">'+fmtWon(Math.round(val),"억원")+'</text>';
+    }
+    // x labels
+    labels.forEach(function(l,i){
+      svg += '<text class="agg-axis-text" x="'+X(i).toFixed(1)+'" y="'+(H-padB+16)+'" text-anchor="middle">'+l+'</text>';
+    });
+    // lines
+    series.forEach(function(s){
+      var pts = [];
+      s.values.forEach(function(v,i){
+        if(v===null || v===undefined) return;
+        var vv = (s.unit==="억엔") ? v*NEXON_FX_RATE : v;
+        pts.push({i:i, v:vv});
+      });
+      if(pts.length===0) return;
+      var d = "";
+      pts.forEach(function(p,k){ d += (k===0?"M":"L") + X(p.i).toFixed(1) + "," + Y(p.v).toFixed(1) + " "; });
+      svg += '<path class="agg-line'+(s.dashed?" agg-line--dashed":"")+'" data-id="'+s.id+'" d="'+d+'" style="stroke:var('+s.colorVar+')"/>';
+    });
+    svg += '<line class="agg-crosshair" id="'+opts.svgHolderId+'_cross" x1="0" y1="'+padT+'" x2="0" y2="'+(H-padB)+'" style="display:none;"/>';
+    svg += '<rect class="agg-hit" id="'+opts.svgHolderId+'_hit" x="'+padL+'" y="'+padT+'" width="'+plotW+'" height="'+plotH+'"/>';
+    svg += '</svg>';
+
+    var holder = document.getElementById(opts.svgHolderId);
+    holder.innerHTML = svg;
+
+    var tooltipEl = document.getElementById(opts.tooltipId);
+    function showTooltip(idx){
+      var rows = series.map(function(s){
+        var v = s.values[idx];
+        if(v===null || v===undefined) return null;
+        var vv = (s.unit==="억엔") ? v*NEXON_FX_RATE : v;
+        return { id:s.id, name:s.name, colorVar:s.colorVar, raw:v, unit:s.unit, converted:vv };
+      }).filter(Boolean).sort(function(a,b){ return b.converted-a.converted; });
+      var html = '<div class="tt-period">'+labels[idx]+'</div>';
+      html += rows.map(function(r){
+        var valText = r.unit==="억엔" ? fmtWon(Math.round(r.raw),"억엔")+' (≈'+fmtWon(Math.round(r.converted),"억원")+')' : fmtWon(Math.round(r.raw),"억원");
+        return '<div class="tt-row"><span class="tt-dot" style="background:var('+r.colorVar+')"></span><span class="tt-name">'+r.name+'</span><span class="tt-val">'+valText+'</span></div>';
+      }).join("");
+      tooltipEl.innerHTML = html;
+    }
+    showTooltip(labels.length-1);
+
+    var hit = document.getElementById(opts.svgHolderId+'_hit');
+    var cross = document.getElementById(opts.svgHolderId+'_cross');
+    function handleMove(clientX){
+      var svgEl = holder.querySelector('svg');
+      var rect = svgEl.getBoundingClientRect();
+      var scaleX = W/rect.width;
+      var localX = (clientX-rect.left)*scaleX;
+      var idx = Math.round((localX-padL)/plotW*xs);
+      idx = Math.max(0, Math.min(xs, idx));
+      cross.setAttribute("x1", X(idx).toFixed(1));
+      cross.setAttribute("x2", X(idx).toFixed(1));
+      cross.style.display = "block";
+      showTooltip(idx);
+    }
+    hit.addEventListener("mousemove", function(e){ handleMove(e.clientX); });
+    hit.addEventListener("touchmove", function(e){ if(e.touches[0]) handleMove(e.touches[0].clientX); e.preventDefault(); }, {passive:false});
+    hit.addEventListener("mouseleave", function(){ cross.style.display="none"; showTooltip(labels.length-1); });
+
+    // legend
+    var legendEl = document.getElementById(opts.legendId);
+    legendEl.innerHTML = series.map(function(s){
+      return '<span class="agg-legend-item" data-id="'+s.id+'"><span class="agg-legend-swatch'+(s.dashed?" is-dashed":"")+'" style="border-color:var('+s.colorVar+')"></span>'+s.name+'</span>';
+    }).join("");
+    legendEl.querySelectorAll(".agg-legend-item").forEach(function(item){
+      item.addEventListener("click", function(){
+        var id = item.getAttribute("data-id");
+        var path = holder.querySelector('path[data-id="'+id+'"]');
+        var nowDim = item.classList.toggle("is-dim");
+        if(path) path.style.opacity = nowDim ? "0.08" : "";
+      });
+    });
+  }
+
   function upcomingHtml(upcoming){
     if(!upcoming || upcoming.length===0) return "";
     return '<div class="upcoming-block"><span class="upcoming-label">출시 예정작</span><ul>'+upcoming.map(function(t){return '<li>'+t+'</li>';}).join("")+'</ul></div>';
@@ -860,9 +1019,39 @@
     }).join("");
   }
 
+  function renderAggCharts(){
+    var listedSeries = LISTED.map(function(c){
+      return { id:c.id, name:c.name, colorVar:c.colorVar, dashed:!!DASHED_IDS[c.id], values:c.revenue, unit:c.unit };
+    });
+    renderMultiLineChart({
+      svgHolderId:"aggChartHolder", tooltipId:"aggTooltip", legendId:"aggLegend",
+      labels: PERIOD_LABELS.map(function(l){ return "20"+l.replace(" "," "); }),
+      series: listedSeries,
+      ariaLabel: "상장 13개사 분기 매출 비교 차트"
+    });
+
+    var unlistedYears = [];
+    UNLISTED.forEach(function(c){ c.years.forEach(function(y){ if(unlistedYears.indexOf(y)<0) unlistedYears.push(y); }); });
+    unlistedYears.sort();
+    var unlistedSeries = UNLISTED.map(function(c){
+      var values = unlistedYears.map(function(y){
+        var idx = c.years.indexOf(y);
+        return idx>=0 ? c.revenue[idx] : null;
+      });
+      return { id:c.id, name:c.name, colorVar:c.colorVar, dashed:false, values:values, unit:c.unit };
+    });
+    renderMultiLineChart({
+      svgHolderId:"unlistedChartHolder", tooltipId:"unlistedTooltip", legendId:"unlistedLegend",
+      labels: unlistedYears.map(function(y){ return "FY"+y; }),
+      series: unlistedSeries,
+      ariaLabel: "비상장 2개사 연간 매출 비교 차트"
+    });
+  }
+
   renderTicks();
   updateScrub(8);
   renderUnlistedGrid();
+  renderAggCharts();
   renderRankTable("asTable", AS_TOP100, "app_store");
   renderRankTable("gpTable", GP_TOP100, "google_play");
   renderOnestore();

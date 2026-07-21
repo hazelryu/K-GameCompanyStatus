@@ -967,45 +967,62 @@
     holder.innerHTML = svg;
 
     var tooltipEl = document.getElementById(opts.tooltipId);
-    function showTooltip(idx){
-      var rows = series.map(function(s){
-        var v = s.values[idx];
-        var vv = toChartVal(s,v);
-        if(vv===null) return null;
-        return { id:s.id, name:s.name, colorVar:s.colorVar, raw:v, unit:s.unit, converted:vv };
-      }).filter(Boolean).sort(function(a,b){ return b.converted-a.converted; });
+    // Tooltip shows only the single series nearest the cursor's Y position (not every
+    // company at that quarter) — with 13-15 lines bunched together, a full ranking list
+    // was hard to read and the colors all blurred together at a glance.
+    function showTooltip(idx, r){
+      var valText = fmtTooltipVal(r, r.raw, r.converted);
       var html = '<div class="tt-period">'+labels[idx]+'</div>';
-      html += rows.map(function(r){
-        var valText = fmtTooltipVal(r, r.raw, r.converted);
-        return '<div class="tt-row"><span class="tt-dot" style="background:var('+r.colorVar+')"></span><span class="tt-name">'+r.name+'</span><span class="tt-val">'+valText+'</span></div>';
-      }).join("");
+      html += '<div class="tt-row"><span class="tt-dot" style="background:var('+r.colorVar+')"></span><span class="tt-name">'+r.name+'</span><span class="tt-val">'+valText+'</span></div>';
       tooltipEl.innerHTML = html;
     }
     tooltipEl.style.display = "none";
 
     var hit = document.getElementById(opts.svgHolderId+'_hit');
     var cross = document.getElementById(opts.svgHolderId+'_cross');
-    function handleMove(clientX){
+    var hoveredPath = null;
+    function setHoveredLine(id){
+      if(hoveredPath){ hoveredPath.style.strokeWidth = ""; hoveredPath = null; }
+      if(id){
+        var p = holder.querySelector('path[data-id="'+id+'"]');
+        if(p){ p.style.strokeWidth = "3.5"; hoveredPath = p; }
+      }
+    }
+    function handleMove(clientX, clientY){
       var svgEl = holder.querySelector('svg');
       var rect = svgEl.getBoundingClientRect();
-      var scaleX = W/rect.width;
-      var localX = (clientX-rect.left)*scaleX;
+      var scale = W/rect.width;
+      var localX = (clientX-rect.left)*scale;
+      var localY = (clientY-rect.top)*scale;
       var idx = Math.round((localX-padL)/plotW*xs);
       idx = Math.max(0, Math.min(xs, idx));
       cross.setAttribute("x1", X(idx).toFixed(1));
       cross.setAttribute("x2", X(idx).toFixed(1));
       cross.style.display = "block";
+
+      // find whichever series' line sits closest (vertically) to the cursor at this quarter
+      var nearest = null, nearestDist = Infinity;
+      series.forEach(function(s){
+        var v = s.values[idx];
+        var vv = toChartVal(s,v);
+        if(vv===null) return;
+        var dist = Math.abs(Y(vv)-localY);
+        if(dist<nearestDist){ nearestDist = dist; nearest = { id:s.id, name:s.name, colorVar:s.colorVar, raw:v, unit:s.unit, converted:vv }; }
+      });
+
+      if(!nearest){ tooltipEl.style.display="none"; setHoveredLine(null); return; }
       tooltipEl.style.display = "block";
       // keep the tooltip on the opposite side of the hovered point so it doesn't cover the lines being inspected
       var onRightHalf = idx > xs/2;
       tooltipEl.style.left = onRightHalf ? "8px" : "auto";
       tooltipEl.style.right = onRightHalf ? "auto" : "8px";
-      showTooltip(idx);
+      showTooltip(idx, nearest);
+      setHoveredLine(nearest.id);
     }
-    hit.addEventListener("mousemove", function(e){ handleMove(e.clientX); });
-    hit.addEventListener("touchstart", function(e){ if(e.touches[0]) handleMove(e.touches[0].clientX); }, {passive:true});
-    hit.addEventListener("touchmove", function(e){ if(e.touches[0]) handleMove(e.touches[0].clientX); e.preventDefault(); }, {passive:false});
-    hit.addEventListener("mouseleave", function(){ cross.style.display="none"; tooltipEl.style.display="none"; });
+    hit.addEventListener("mousemove", function(e){ handleMove(e.clientX, e.clientY); });
+    hit.addEventListener("touchstart", function(e){ if(e.touches[0]) handleMove(e.touches[0].clientX, e.touches[0].clientY); }, {passive:true});
+    hit.addEventListener("touchmove", function(e){ if(e.touches[0]) handleMove(e.touches[0].clientX, e.touches[0].clientY); e.preventDefault(); }, {passive:false});
+    hit.addEventListener("mouseleave", function(){ cross.style.display="none"; tooltipEl.style.display="none"; setHoveredLine(null); });
 
     // legend
     var legendEl = document.getElementById(opts.legendId);

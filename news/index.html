@@ -43,22 +43,17 @@
     margin: 0; -webkit-font-smoothing: antialiased;
   }
   .wrap { max-width: 780px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
-  .kicker {
-    font-family: Consolas, "D2Coding", monospace; font-size: 0.72rem; letter-spacing: 0.18em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem;
-  }
-  h1 {
-    font-family: Batang, "Nanum Myeongjo", Georgia, serif; font-weight: 700; font-size: clamp(1.9rem, 5vw, 2.6rem);
-    line-height: 1.2; margin: 0 0 0.6rem; text-wrap: balance; letter-spacing: -0.01em;
-  }
   .sub { font-size: 0.95rem; color: var(--ink-soft); max-width: 58ch; margin: 0 0 1.6rem; }
   hr.rule { border: none; border-top: 3px solid var(--ink); margin: 0 0 1.4rem; }
 
-  .page-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
-  .page-head .tabs { margin-top: 0.3rem; }
+  /* page-head mirrors the dashboard's .topbar exactly (same font sizes/spacing) so the
+     sub-tabs land at the same position on both pages */
+  .page-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
   .page-title { flex: 1; min-width: 0; }
-  .tabs { display: flex; gap: 0.3rem; background: var(--paper-sunk); border: 1px solid var(--rule); border-radius: 8px; padding: 3px; width: fit-content; flex: none; }
-  .tab-btn { border: none; background: transparent; color: var(--ink-soft); font-size: 0.83rem; font-weight: 600; font-family: inherit; padding: 0.45rem 1rem; border-radius: 6px; cursor: pointer; }
+  .page-title h1 { font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "Apple SD Gothic Neo", sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; margin: 0; }
+  .page-subtitle { font-size: 12.5px; color: var(--ink-faint); margin: 2px 0 0; }
+  .tabs { display: flex; gap: 4px; background: var(--paper-sunk); border: 1px solid var(--rule); border-radius: 9px; padding: 3px; width: fit-content; flex: none; }
+  .tab-btn { border: none; background: transparent; color: var(--ink-soft); font-size: 13px; font-weight: 600; font-family: inherit; padding: 7px 14px; border-radius: 6px; cursor: pointer; }
   .tab-btn.is-active { background: var(--accent); color: var(--paper-raised); }
   .panel[hidden] { display: none; }
 
@@ -136,9 +131,8 @@
 <div class="wrap">
   <div class="page-head">
     <div class="page-title">
-      <div class="kicker">K-GAME BUSINESS WIRE</div>
       <h1>게임 산업 뉴스</h1>
-      <p class="sub" style="margin:0;">한국 게임 산업 소식을 데일리 브리핑과 월간 리캡으로 정리합니다.</p>
+      <p class="page-subtitle">한국 게임 산업 소식을 데일리 브리핑과 월간 리캡으로 정리합니다.</p>
     </div>
     <nav class="tabs" role="tablist" aria-label="보기 전환">
       <button class="tab-btn is-active" id="tabBtnDaily" role="tab" aria-selected="true" aria-controls="panelDaily">데일리 뉴스</button>

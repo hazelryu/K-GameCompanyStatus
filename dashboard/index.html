@@ -48,7 +48,7 @@
     <div class="agg-chart-wrap">
       <div class="agg-chart-head">
         <div class="agg-title-row">
-          <h2 class="agg-title">상장 13개사 분기 매출 비교</h2>
+          <h2 class="agg-title">게임사 15개사 매출 비교</h2>
           <div class="mode-toggle" id="aggModeToggle">
             <button class="mode-btn is-active" data-mode="revenue">매출(억원)</button>
             <button class="mode-btn" data-mode="growth">성장률(YoY%)</button>
@@ -61,7 +61,7 @@
         <div class="agg-tooltip" id="aggTooltip"></div>
       </div>
       <div class="agg-legend" id="aggLegend"></div>
-      <p class="rank-legend">넥슨은 억엔(JPY) 공시를 <b id="aggFxNote">약 1엔=9.3원</b> 환율로 환산한 근사치입니다(실시간 환율 아님, 비교용). 점선은 카드 색상을 재사용한 5개사(네오위즈·펄어비스·위메이드·시프트업·웹젠)를 실선 그룹과 구분한 표시입니다. <b>NHN은 게임 외 결제·클라우드·커머스를 포함한 회사 전체 매출</b>이라 다른 회사들과 단순 비교 시 과대평가될 수 있습니다(게임 부문만 보려면 아래 카드 참고). 범례를 클릭하면 해당 회사 선을 흐리게/선명하게 토글할 수 있습니다.</p>
+      <p class="rank-legend">넥슨은 억엔(JPY) 공시를 <b id="aggFxNote">약 1엔=9.3원</b> 환율로 환산한 근사치입니다(실시간 환율 아님, 비교용). 점선은 카드 색상을 재사용한 5개사(네오위즈·펄어비스·위메이드·시프트업·웹젠)를 실선 그룹과 구분한 표시입니다. <b>점(dotted) 스타일인 스마일게이트·해긴은 상장사가 아니라 분기 실적이 없어 연간(FY) 매출을 각 연도 4분기 지점에 점으로만 표시</b>합니다 — 두 점을 잇는 선은 분기별 추이가 아닌 연간 스냅샷을 잇는 참고선이며, 2020~2023년 등 2024년 이전 연도는 이 분기 차트 범위 밖이라 표시되지 않습니다(전체 연도 추이는 아래 카드 참고). <b>NHN은 게임 외 결제·클라우드·커머스를 포함한 회사 전체 매출</b>이라 다른 회사들과 단순 비교 시 과대평가될 수 있습니다(게임 부문만 보려면 아래 카드 참고). 범례를 클릭하면 해당 회사 선을 흐리게/선명하게 토글할 수 있습니다.</p>
     </div>
 
     <div class="search-row">
@@ -84,24 +84,6 @@
     <div class="card-grid" id="listedGrid"></div>
 
     <h2 class="section-label">비상장 2개사 &middot; 연간(DART 감사보고서 기준)</h2>
-
-    <div class="agg-chart-wrap agg-chart-wrap--small">
-      <div class="agg-chart-head">
-        <div class="agg-title-row">
-          <h2 class="agg-title">스마일게이트·해긴 연간 매출 비교</h2>
-          <div class="mode-toggle" id="unlistedModeToggle">
-            <button class="mode-btn is-active" data-mode="revenue">매출(억원)</button>
-            <button class="mode-btn" data-mode="growth">성장률(YoY%)</button>
-          </div>
-        </div>
-        <p class="agg-sub">회계연도별(FY), 단위 억원. 두 회사의 연도 범위가 달라 겹치는 구간만 비교 가능합니다.</p>
-      </div>
-      <div class="agg-chart-body">
-        <div class="agg-svg-holder" id="unlistedChartHolder"></div>
-        <div class="agg-tooltip" id="unlistedTooltip"></div>
-      </div>
-      <div class="agg-legend" id="unlistedLegend"></div>
-    </div>
 
     <div class="card-grid" id="unlistedGrid"></div>
 
@@ -260,7 +242,6 @@
   .section-label{font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); margin:24px 0 12px;}
 
   .agg-chart-wrap{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px 18px; margin-bottom:20px;}
-  .agg-chart-wrap--small{margin:12px 0 16px;}
   .agg-title-row{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;}
   .mode-toggle{display:flex; gap:3px; background:var(--page); border:1px solid var(--border); border-radius:7px; padding:2px;}
   .mode-btn{border:none; background:transparent; color:var(--ink-2); font-size:11px; font-weight:600; padding:5px 10px; border-radius:5px; cursor:pointer;}
@@ -274,6 +255,8 @@
   .agg-axis-text{fill:var(--muted); font-size:10px; font-variant-numeric:tabular-nums;}
   .agg-line{fill:none; stroke-width:2; opacity:0.85;}
   .agg-line--dashed{stroke-dasharray:5 3;}
+  .agg-line--dotted{stroke-dasharray:1.5 3.5; stroke-linecap:round;}
+  .agg-point{stroke:var(--surface); stroke-width:1.5;}
   .agg-crosshair{stroke:var(--muted); stroke-width:1; stroke-dasharray:3 3; pointer-events:none;}
   .agg-hit{fill:transparent; cursor:crosshair;}
   .agg-tooltip{position:absolute; top:8px; right:8px; min-width:190px; max-width:240px; background:var(--page); border:1px solid var(--border); border-radius:8px; padding:8px 10px; font-size:11.5px; box-shadow:0 4px 14px rgba(0,0,0,0.12); pointer-events:none;}
@@ -288,6 +271,7 @@
   .agg-legend-item.is-dim{opacity:0.35;}
   .agg-legend-swatch{width:14px; height:0; border-top:2px solid; flex:none;}
   .agg-legend-swatch.is-dashed{border-top-style:dashed;}
+  .agg-legend-swatch.is-dotted{border-top-style:dotted; border-top-width:3px;}
 
   .card-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(258px, 1fr)); gap:14px;}
   .card{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px;}
@@ -967,7 +951,13 @@
       if(pts.length===0) return;
       var d = "";
       pts.forEach(function(p,k){ d += (k===0?"M":"L") + X(p.i).toFixed(1) + "," + Y(p.v).toFixed(1) + " "; });
-      svg += '<path class="agg-line'+(s.dashed?" agg-line--dashed":"")+'" data-id="'+s.id+'" d="'+d+'" style="stroke:var('+s.colorVar+')"/>';
+      var lineStyle = s.dashed ? " agg-line--dashed" : (s.dotted ? " agg-line--dotted" : "");
+      svg += '<path class="agg-line'+lineStyle+'" data-id="'+s.id+'" d="'+d+'" style="stroke:var('+s.colorVar+')"/>';
+      if(s.sparse){
+        pts.forEach(function(p){
+          svg += '<circle class="agg-point" data-id="'+s.id+'" cx="'+X(p.i).toFixed(1)+'" cy="'+Y(p.v).toFixed(1)+'" r="3.5" style="fill:var('+s.colorVar+')"/>';
+        });
+      }
     });
     svg += '<line class="agg-crosshair" id="'+opts.svgHolderId+'_cross" x1="0" y1="'+padT+'" x2="0" y2="'+(H-padB)+'" style="display:none;"/>';
     svg += '<rect class="agg-hit" id="'+opts.svgHolderId+'_hit" x="'+padL+'" y="'+padT+'" width="'+plotW+'" height="'+plotH+'"/>';
@@ -1020,14 +1010,17 @@
     // legend
     var legendEl = document.getElementById(opts.legendId);
     legendEl.innerHTML = series.map(function(s){
-      return '<span class="agg-legend-item" data-id="'+s.id+'"><span class="agg-legend-swatch'+(s.dashed?" is-dashed":"")+'" style="border-color:var('+s.colorVar+')"></span>'+s.name+'</span>';
+      var swatchStyle = s.dashed ? " is-dashed" : (s.dotted ? " is-dotted" : "");
+      return '<span class="agg-legend-item" data-id="'+s.id+'"><span class="agg-legend-swatch'+swatchStyle+'" style="border-color:var('+s.colorVar+')"></span>'+s.name+'</span>';
     }).join("");
     legendEl.querySelectorAll(".agg-legend-item").forEach(function(item){
       item.addEventListener("click", function(){
         var id = item.getAttribute("data-id");
         var path = holder.querySelector('path[data-id="'+id+'"]');
+        var points = holder.querySelectorAll('circle[data-id="'+id+'"]');
         var nowDim = item.classList.toggle("is-dim");
         if(path) path.style.opacity = nowDim ? "0.08" : "";
+        points.forEach(function(pt){ pt.style.opacity = nowDim ? "0.08" : ""; });
       });
     });
   }
@@ -1182,45 +1175,41 @@
   }
 
   var aggMode = "revenue";
-  var unlistedMode = "revenue";
-  var unlistedYearsGlobal = [];
+
+  // Smilegate/Haegin only disclose annual (FY) revenue, not quarterly. To plot them on the
+  // same quarterly chart as the 13 listed companies without fabricating quarterly figures,
+  // each company's annual total is placed only at that year's Q4 slot (nulls elsewhere) —
+  // rendered as sparse dotted points (see s.sparse in renderMultiLineChart), never implied
+  // as continuous quarterly data.
+  function unlistedToQuarterly(c){
+    return PERIODS.map(function(p){
+      var year = p.slice(0,4), q = p.slice(4);
+      if(q !== "Q4") return null;
+      var idx = c.years.indexOf(year);
+      return idx>=0 ? c.revenue[idx] : null;
+    });
+  }
 
   function renderListedAgg(){
-    var series = LISTED.map(function(c){
+    var listedSeries = LISTED.map(function(c){
       var vals = aggMode==="growth" ? computeGrowth(c.revenue,4) : c.revenue;
       return { id:c.id, name:c.name, colorVar:c.colorVar, dashed:!!DASHED_IDS[c.id], values:vals, unit:c.unit };
+    });
+    var unlistedSeries = UNLISTED.map(function(c){
+      var quarterly = unlistedToQuarterly(c);
+      var vals = aggMode==="growth" ? computeGrowth(quarterly,4) : quarterly;
+      return { id:c.id, name:c.name, colorVar:c.colorVar, dotted:true, sparse:true, values:vals, unit:c.unit };
     });
     renderMultiLineChart({
       svgHolderId:"aggChartHolder", tooltipId:"aggTooltip", legendId:"aggLegend",
       labels: PERIOD_LABELS.map(function(l){ return "20"+l.replace(" "," "); }),
-      series: series, mode: aggMode,
-      ariaLabel: "상장 13개사 분기 매출 비교 차트"
-    });
-  }
-
-  function renderUnlistedAgg(){
-    var series = UNLISTED.map(function(c){
-      var values = unlistedYearsGlobal.map(function(y){
-        var idx = c.years.indexOf(y);
-        return idx>=0 ? c.revenue[idx] : null;
-      });
-      if(unlistedMode==="growth") values = computeGrowth(values,1);
-      return { id:c.id, name:c.name, colorVar:c.colorVar, dashed:false, values:values, unit:c.unit };
-    });
-    renderMultiLineChart({
-      svgHolderId:"unlistedChartHolder", tooltipId:"unlistedTooltip", legendId:"unlistedLegend",
-      labels: unlistedYearsGlobal.map(function(y){ return "FY"+y; }),
-      series: series, mode: unlistedMode,
-      ariaLabel: "비상장 2개사 연간 매출 비교 차트"
+      series: listedSeries.concat(unlistedSeries), mode: aggMode,
+      ariaLabel: "게임사 15개사 매출 비교 차트"
     });
   }
 
   function renderAggCharts(){
-    unlistedYearsGlobal = [];
-    UNLISTED.forEach(function(c){ c.years.forEach(function(y){ if(unlistedYearsGlobal.indexOf(y)<0) unlistedYearsGlobal.push(y); }); });
-    unlistedYearsGlobal.sort();
     renderListedAgg();
-    renderUnlistedAgg();
   }
 
   renderHighlights();
@@ -1270,7 +1259,6 @@
     });
   }
   wireModeToggle("aggModeToggle", function(m){ aggMode = m; }, renderListedAgg);
-  wireModeToggle("unlistedModeToggle", function(m){ unlistedMode = m; }, renderUnlistedAgg);
 
   // Company search (filters both listed + unlisted card grids)
   function applyCompanySearch(){

@@ -592,3 +592,12 @@
   </footer>
 
 </div>
+
+<script>
+  // When embedded inline via news/index.html's iframe (?embed=1), hide the duplicate site-nav
+  // since the parent page already shows one.
+  if (new URLSearchParams(location.search).get("embed") === "1") {
+    var nav = document.querySelector(".site-nav");
+    if (nav) nav.style.display = "none";
+  }
+</script>

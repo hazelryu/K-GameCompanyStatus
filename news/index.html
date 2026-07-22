@@ -86,14 +86,15 @@
   .monthly-preview { padding-top: 0.4rem; }
   .monthly-view-link { display: inline-block; margin-top: 0.6rem; font-size: 0.85rem; color: var(--accent); text-decoration: none; font-weight: 600; }
   .monthly-view-link:hover { text-decoration: underline; }
+  .monthly-frame { width: 100%; border: 1px solid var(--rule); border-radius: 8px; margin-top: 1.2rem; display: block; }
 
   .news-overview { font-family: Batang, "Nanum Myeongjo", Georgia, serif; font-size: 1.02rem; line-height: 1.75; color: var(--ink); margin: 0 0 1.6rem; }
   .news-section { margin-bottom: 1.6rem; }
-  .news-section-title { font-family: Batang, "Nanum Myeongjo", Georgia, serif; font-size: 1.05rem; margin: 0 0 0.7rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--rule); }
+  .news-section-title { font-family: Batang, "Nanum Myeongjo", Georgia, serif; font-weight: 700; font-size: 1.1rem; color: var(--accent); margin: 0 0 0.7rem; padding: 0 0 0.4rem 0.7rem; border-bottom: 2px solid var(--accent); border-left: 4px solid var(--accent); }
   .news-item-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.7rem; }
   .news-item-list li { font-size: 0.87rem; line-height: 1.65; color: var(--ink-soft); padding-left: 1rem; position: relative; }
   .news-item-list li::before { content: "●"; position: absolute; left: 0; top: 0.35em; font-size: 0.4rem; color: var(--accent); }
-  .news-item-list b { color: var(--ink); }
+  .news-item-list b { color: var(--accent); font-weight: 700; }
   .news-item-list a { color: var(--accent); text-decoration: none; }
   .news-item-list a:hover { text-decoration: underline; }
 
@@ -180,8 +181,9 @@
     <div class="monthly-preview">
       <h2 class="issue-title" id="monthlyPreviewTitle"></h2>
       <p class="issue-desc" id="monthlyPreviewDesc"></p>
-      <a class="monthly-view-link" id="monthlyPreviewLink" href="#">전체 리캡 보기 &rarr;</a>
+      <a class="monthly-view-link" id="monthlyPreviewLink" href="#" target="_blank" rel="noopener">새 탭에서 보기 &rarr;</a>
     </div>
+    <iframe id="monthlyFrame" class="monthly-frame" title="월간 리캡 본문"></iframe>
   </section>
 
   <footer>VNG KR BD Intelligence &middot; 데일리 뉴스는 매일 11:30, 월간 리캡은 매월 1일 자동 생성</footer>
@@ -303,6 +305,14 @@
   ];
   var monthlyIdx = 0;
 
+  function resizeMonthlyFrame(){
+    var frame = document.getElementById("monthlyFrame");
+    try {
+      var doc = frame.contentDocument;
+      if(doc && doc.documentElement){ frame.style.height = doc.documentElement.scrollHeight + "px"; }
+    } catch(e){ /* cross-origin fallback: leave whatever height was last set */ }
+  }
+
   function renderMonthlyIssue(idx){
     idx = Math.max(0, Math.min(MONTHLY_ISSUES.length - 1, idx));
     monthlyIdx = idx;
@@ -313,6 +323,7 @@
     document.getElementById("monthlyPreviewTitle").innerHTML = escNewsHtml(issue.title) + (issue.latest ? ' <span class="issue-latest">Latest</span>' : "");
     document.getElementById("monthlyPreviewDesc").textContent = issue.desc;
     document.getElementById("monthlyPreviewLink").href = "recaps/" + issue.ym + ".html";
+    document.getElementById("monthlyFrame").src = "recaps/" + issue.ym + ".html?embed=1";
   }
 
   function initMonthlyTab(){
@@ -321,6 +332,7 @@
     sel.addEventListener("change", function(){ renderMonthlyIssue(parseInt(sel.value, 10)); });
     document.getElementById("monthlyPrev").addEventListener("click", function(){ renderMonthlyIssue(monthlyIdx + 1); });
     document.getElementById("monthlyNext").addEventListener("click", function(){ renderMonthlyIssue(monthlyIdx - 1); });
+    document.getElementById("monthlyFrame").addEventListener("load", resizeMonthlyFrame);
     renderMonthlyIssue(0);
   }
 

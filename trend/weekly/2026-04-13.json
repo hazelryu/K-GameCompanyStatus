@@ -1,0 +1,92 @@
+{
+   "filenameHint" : "26년_4월_4주차.xlsx",
+   "gpRevenueTop10" : [
+      {
+         "company" : "FUNFLY",
+         "game" : "라스트워: 서바이벌",
+         "rank" : 1,
+         "rankChange" : "-",
+         "revenueChangePct" : -11.2,
+         "revenueUsd" : 2980427
+      },
+      {
+         "company" : "Century Games",
+         "game" : "WOS:화이트 아웃 서바이벌",
+         "rank" : 2,
+         "rankChange" : "-",
+         "revenueChangePct" : 42.66,
+         "revenueUsd" : 2834901
+      },
+      {
+         "company" : "Century Games",
+         "game" : "킹샷",
+         "rank" : 3,
+         "rankChange" : "-",
+         "revenueChangePct" : 13.14,
+         "revenueUsd" : 1376590
+      },
+      {
+         "company" : "Nexon",
+         "game" : "메이플 키우기",
+         "rank" : 4,
+         "rankChange" : "-",
+         "revenueChangePct" : -51.2,
+         "revenueUsd" : 1361962
+      },
+      {
+         "company" : "NCSOFT",
+         "game" : "리니지M",
+         "rank" : 5,
+         "rankChange" : "-",
+         "revenueChangePct" : -19.5,
+         "revenueUsd" : 1333114
+      },
+      {
+         "company" : "Dream Games",
+         "game" : "로얄매치",
+         "rank" : 6,
+         "rankChange" : "-",
+         "revenueChangePct" : -10.7,
+         "revenueUsd" : 940918
+      },
+      {
+         "company" : "Microfun",
+         "game" : "가쉽하버: 합성 & 스토리 게임",
+         "rank" : 7,
+         "rankChange" : "-",
+         "revenueChangePct" : -4.19,
+         "revenueUsd" : 803110
+      },
+      {
+         "company" : "Netmarble",
+         "game" : "몬길: 스타다이브",
+         "rank" : 8,
+         "rankChange" : "NEW",
+         "revenueChangePct" : null,
+         "revenueUsd" : 723141
+      },
+      {
+         "company" : "Roblox",
+         "game" : "로블록스",
+         "rank" : 9,
+         "rankChange" : "-",
+         "revenueChangePct" : -16.39,
+         "revenueUsd" : 722498
+      },
+      {
+         "company" : "111%",
+         "game" : "운빨존많겜",
+         "rank" : 10,
+         "rankChange" : "-",
+         "revenueChangePct" : 2.83,
+         "revenueUsd" : 627638
+      }
+   ],
+   "truePeriod" : {
+      "endDate" : "2026-04-19",
+      "month" : 4,
+      "startDate" : "2026-04-13",
+      "week" : 3,
+      "year" : 2026
+   }
+}

@@ -1,0 +1,92 @@
+{
+   "filenameHint" : "23년_12월_1주차.xlsx",
+   "gpRevenueTop10" : [
+      {
+         "company" : "NCSOFT",
+         "game" : "리니지M",
+         "rank" : 1,
+         "rankChange" : "-",
+         "revenueChangePct" : -12.05,
+         "revenueUsd" : 8892578
+      },
+      {
+         "company" : "NCSOFT",
+         "game" : "리니지2M",
+         "rank" : 2,
+         "rankChange" : "▲4",
+         "revenueChangePct" : 98.48,
+         "revenueUsd" : 3479895
+      },
+      {
+         "company" : "WeMade",
+         "game" : "나이트 크로우",
+         "rank" : 3,
+         "rankChange" : "-",
+         "revenueChangePct" : -26.97,
+         "revenueUsd" : 2964229
+      },
+      {
+         "company" : "NCSOFT",
+         "game" : "리니지 W",
+         "rank" : 4,
+         "rankChange" : "▼2",
+         "revenueChangePct" : -33.45,
+         "revenueUsd" : 2720820
+      },
+      {
+         "company" : "Kakao",
+         "game" : "오딘: 발할라 라이징",
+         "rank" : 5,
+         "rankChange" : "▼1",
+         "revenueChangePct" : -21.24,
+         "revenueUsd" : 2576291
+      },
+      {
+         "company" : "Webzen",
+         "game" : "뮤 모나크",
+         "rank" : 6,
+         "rankChange" : "▼1",
+         "revenueChangePct" : -17.73,
+         "revenueUsd" : 2107968
+      },
+      {
+         "company" : "Netmarble",
+         "game" : "세븐나이츠 키우기",
+         "rank" : 7,
+         "rankChange" : "▲2",
+         "revenueChangePct" : -3.49,
+         "revenueUsd" : 1287087
+      },
+      {
+         "company" : "Century Games",
+         "game" : "WOS: 화이트 아웃 서바이벌",
+         "rank" : 8,
+         "rankChange" : "-",
+         "revenueChangePct" : -23.54,
+         "revenueUsd" : 1188164
+      },
+      {
+         "company" : "NTRANCE",
+         "game" : "Call of Chaos : Assemble",
+         "rank" : 9,
+         "rankChange" : "▲24",
+         "revenueChangePct" : 253.02,
+         "revenueUsd" : 1172862
+      },
+      {
+         "company" : "miHoYo",
+         "game" : "원신",
+         "rank" : 10,
+         "rankChange" : "▼3",
+         "revenueChangePct" : -33.26,
+         "revenueUsd" : 1141072
+      }
+   ],
+   "truePeriod" : {
+      "endDate" : "2023-12-02",
+      "month" : 11,
+      "startDate" : "2023-11-26",
+      "week" : 4,
+      "year" : 2023
+   }
+}

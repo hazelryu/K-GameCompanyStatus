@@ -1,0 +1,338 @@
+{
+   "asDownloadTop10" : [
+      {
+         "company" : "WORCESTER FESTIVAL",
+         "downloadChangePct" : 410.24,
+         "downloads" : 89685,
+         "game" : "항로: 레드라인",
+         "rank" : 1,
+         "rankChange" : "▲12"
+      },
+      {
+         "company" : "Gamepub",
+         "downloadChangePct" : null,
+         "downloads" : 58682,
+         "game" : "우산소녀 키우기",
+         "rank" : 2,
+         "rankChange" : "NEW"
+      },
+      {
+         "company" : "Ujoy Games",
+         "downloadChangePct" : 0.44,
+         "downloads" : 55986,
+         "game" : "픽셀 히어로",
+         "rank" : 3,
+         "rankChange" : "▼2"
+      },
+      {
+         "company" : "트렌드테크",
+         "downloadChangePct" : null,
+         "downloads" : 38618,
+         "game" : "타워 삼국지 : 킹 오브 디펜스",
+         "rank" : 4,
+         "rankChange" : "NEW"
+      },
+      {
+         "company" : "NHN",
+         "downloadChangePct" : 8.67,
+         "downloads" : 33015,
+         "game" : "우파루 오딧세이",
+         "rank" : 5,
+         "rankChange" : "▼2"
+      },
+      {
+         "company" : "Jinhe Network",
+         "downloadChangePct" : -0.88,
+         "downloads" : 28080,
+         "game" : "삼국지 러쉬 Origins : 타워 디펜스",
+         "rank" : 6,
+         "rankChange" : "▼1"
+      },
+      {
+         "company" : "Mucool",
+         "downloadChangePct" : null,
+         "downloads" : 21311,
+         "game" : "Luna：리버스",
+         "rank" : 7,
+         "rankChange" : "NEW"
+      },
+      {
+         "company" : "永杨",
+         "downloadChangePct" : 104.81,
+         "downloads" : 21067,
+         "game" : "Power Wash Challenge",
+         "rank" : 8,
+         "rankChange" : "▲21"
+      },
+      {
+         "company" : "Whoyaho",
+         "downloadChangePct" : -27.09,
+         "downloads" : 19435,
+         "game" : "탕후루의 달인 - 탕후루 만들기, ASMR, 먹방",
+         "rank" : 9,
+         "rankChange" : "▼2"
+      },
+      {
+         "company" : "Flamegames",
+         "downloadChangePct" : -32.87,
+         "downloads" : 18157,
+         "game" : "소녀 에볼루션",
+         "rank" : 10,
+         "rankChange" : "▼4"
+      }
+   ],
+   "asRevenueTop10" : [
+      {
+         "company" : "Netmarble",
+         "game" : "세븐나이츠 키우기",
+         "rank" : 1,
+         "rankChange" : "-",
+         "revenueChangePct" : -3.82,
+         "revenueUsd" : 1130759
+      },
+      {
+         "company" : "NEXON",
+         "game" : "FC 온라인 (EA SPORTS FIFA ONLINE 4 M)",
+         "rank" : 2,
+         "rankChange" : "▲1",
+         "revenueChangePct" : -9.86,
+         "revenueUsd" : 847534
+      },
+      {
+         "company" : "NCSOFT",
+         "game" : "리니지M",
+         "rank" : 3,
+         "rankChange" : "▲1",
+         "revenueChangePct" : -6.06,
+         "revenueUsd" : 825064
+      },
+      {
+         "company" : "Kakao Games",
+         "game" : "오딘: 발할라 라이징",
+         "rank" : 4,
+         "rankChange" : "▲3",
+         "revenueChangePct" : 32.7,
+         "revenueUsd" : 704130
+      },
+      {
+         "company" : "WeMade",
+         "game" : "나이트 크로우",
+         "rank" : 5,
+         "rankChange" : "-",
+         "revenueChangePct" : -24.53,
+         "revenueUsd" : 562767
+      },
+      {
+         "company" : "Century Games",
+         "game" : "WOS: 화이트 아웃 서바이벌",
+         "rank" : 6,
+         "rankChange" : "-",
+         "revenueChangePct" : -5.03,
+         "revenueUsd" : 516435
+      },
+      {
+         "company" : "NEXON",
+         "game" : "메이플스토리M",
+         "rank" : 7,
+         "rankChange" : "▲15",
+         "revenueChangePct" : 171.43,
+         "revenueUsd" : 411016
+      },
+      {
+         "company" : "Krafton",
+         "game" : "배틀그라운드 모바일",
+         "rank" : 8,
+         "rankChange" : "-",
+         "revenueChangePct" : -11.29,
+         "revenueUsd" : 386029
+      },
+      {
+         "company" : "NEXON",
+         "game" : "FC 모바일",
+         "rank" : 9,
+         "rankChange" : "-",
+         "revenueChangePct" : -0.31,
+         "revenueUsd" : 326047
+      },
+      {
+         "company" : "Netmarble",
+         "game" : "신의 탑: 새로운 세계",
+         "rank" : 10,
+         "rankChange" : "▲21",
+         "revenueChangePct" : 184.43,
+         "revenueUsd" : 320571
+      }
+   ],
+   "filenameHint" : "23년_10월_4주차.xlsx",
+   "gpDownloadTop10" : [
+      {
+         "company" : "Gamepub",
+         "downloadChangePct" : null,
+         "downloads" : 211615,
+         "game" : "우산소녀 키우기",
+         "rank" : 1,
+         "rankChange" : "NEW"
+      },
+      {
+         "company" : "Webzen",
+         "downloadChangePct" : null,
+         "downloads" : 132059,
+         "game" : "뮤 모나크",
+         "rank" : 2,
+         "rankChange" : "NEW"
+      },
+      {
+         "company" : "Whoyaho",
+         "downloadChangePct" : -35.96,
+         "downloads" : 104839,
+         "game" : "탕후루의 달인 - 탕후루 만들기, ASMR, 먹방",
+         "rank" : 3,
+         "rankChange" : "-"
+      },
+      {
+         "company" : "트렌드테크",
+         "downloadChangePct" : null,
+         "downloads" : 100527,
+         "game" : "타워 삼국지 : 킹 오브 디펜스",
+         "rank" : 4,
+         "rankChange" : "NEW"
+      },
+      {
+         "company" : "BlancoZone",
+         "downloadChangePct" : -49.68,
+         "downloads" : 90489,
+         "game" : "요괴 벌목꾼: 영차영차, 보물이야 떨어져라",
+         "rank" : 5,
+         "rankChange" : "▼3"
+      },
+      {
+         "company" : "MACOVILL",
+         "downloadChangePct" : 29.95,
+         "downloads" : 72170,
+         "game" : "럭키 히어로 : 랜덤 디펜스",
+         "rank" : 6,
+         "rankChange" : "▲2"
+      },
+      {
+         "company" : "Netmarble",
+         "downloadChangePct" : 24.25,
+         "downloads" : 66863,
+         "game" : "세븐나이츠 키우기",
+         "rank" : 7,
+         "rankChange" : "▲2"
+      },
+      {
+         "company" : "NHN",
+         "downloadChangePct" : -31.24,
+         "downloads" : 66576,
+         "game" : "우파루 오딧세이",
+         "rank" : 8,
+         "rankChange" : "▼4"
+      },
+      {
+         "company" : "Dream Games",
+         "downloadChangePct" : 23.93,
+         "downloads" : 56384,
+         "game" : "로얄 매치",
+         "rank" : 9,
+         "rankChange" : "▲2"
+      },
+      {
+         "company" : "NCSOFT",
+         "downloadChangePct" : -50.02,
+         "downloads" : 43562,
+         "game" : "퍼즈업 아미토이",
+         "rank" : 10,
+         "rankChange" : "▼5"
+      }
+   ],
+   "gpRevenueTop10" : [
+      {
+         "company" : "NCSOFT",
+         "game" : "리니지M",
+         "rank" : 1,
+         "rankChange" : "-",
+         "revenueChangePct" : -41.63,
+         "revenueUsd" : 8335060
+      },
+      {
+         "company" : "WeMade",
+         "game" : "나이트 크로우",
+         "rank" : 2,
+         "rankChange" : "-",
+         "revenueChangePct" : -32.51,
+         "revenueUsd" : 4270681
+      },
+      {
+         "company" : "miHoYo",
+         "game" : "붕괴: 스타레일",
+         "rank" : 3,
+         "rankChange" : "▲7",
+         "revenueChangePct" : 71.56,
+         "revenueUsd" : 3146199
+      },
+      {
+         "company" : "Kakao Games",
+         "game" : "오딘: 발할라 라이징",
+         "rank" : 4,
+         "rankChange" : "-",
+         "revenueChangePct" : -41.34,
+         "revenueUsd" : 2413780
+      },
+      {
+         "company" : "NCSOFT",
+         "game" : "리니지W",
+         "rank" : 5,
+         "rankChange" : "-",
+         "revenueChangePct" : -29.62,
+         "revenueUsd" : 2214579
+      },
+      {
+         "company" : "miHoYo",
+         "game" : "원신",
+         "rank" : 6,
+         "rankChange" : "-",
+         "revenueChangePct" : -23.37,
+         "revenueUsd" : 1894903
+      },
+      {
+         "company" : "Netmarble",
+         "game" : "세븐나이츠 키우기",
+         "rank" : 7,
+         "rankChange" : "▼4",
+         "revenueChangePct" : -66.12,
+         "revenueUsd" : 1671271
+      },
+      {
+         "company" : "NCSOFT",
+         "game" : "리니지2M",
+         "rank" : 8,
+         "rankChange" : "▼1",
+         "revenueChangePct" : -35.59,
+         "revenueUsd" : 1444015
+      },
+      {
+         "company" : "Century Games",
+         "game" : "WOS: 화이트 아웃 서바이벌",
+         "rank" : 9,
+         "rankChange" : "▼1",
+         "revenueChangePct" : -41.07,
+         "revenueUsd" : 1248778
+      },
+      {
+         "company" : "Kakao Games",
+         "game" : "아레스 : 라이즈 오브 가디언즈",
+         "rank" : 10,
+         "rankChange" : "▲3",
+         "revenueChangePct" : -21.46,
+         "revenueUsd" : 1243347
+      }
+   ],
+   "truePeriod" : {
+      "endDate" : "2023-10-21",
+      "month" : 10,
+      "startDate" : "2023-10-15",
+      "week" : 3,
+      "year" : 2023
+   }
+}

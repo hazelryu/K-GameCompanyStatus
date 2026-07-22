@@ -1,0 +1,92 @@
+{
+   "filenameHint" : "local_download_26년_7월_2주차.xlsx",
+   "gpRevenueTop10" : [
+      {
+         "company" : "Kakao Games",
+         "game" : "오딘: 발할라 라이징",
+         "rank" : 1,
+         "rankChange" : "-",
+         "revenueChangePct" : 27.13,
+         "revenueUsd" : 3344108
+      },
+      {
+         "company" : "Century Games",
+         "game" : "WOS: 화이트아웃 서바이벌",
+         "rank" : 2,
+         "rankChange" : "▲1",
+         "revenueChangePct" : 110.21,
+         "revenueUsd" : 3136044
+      },
+      {
+         "company" : "Netmarble",
+         "game" : "SOL: enchant",
+         "rank" : 3,
+         "rankChange" : "▼2",
+         "revenueChangePct" : -36.49,
+         "revenueUsd" : 3123186
+      },
+      {
+         "company" : "Niantic",
+         "game" : "Pokémon GO",
+         "rank" : 4,
+         "rankChange" : "-",
+         "revenueChangePct" : 401.49,
+         "revenueUsd" : 1375899
+      },
+      {
+         "company" : "Level Infinite",
+         "game" : "승리의 여신: 니케",
+         "rank" : 5,
+         "rankChange" : "-",
+         "revenueChangePct" : -21.39,
+         "revenueUsd" : 1342311
+      },
+      {
+         "company" : "Century Games",
+         "game" : "킹샷",
+         "rank" : 6,
+         "rankChange" : "-",
+         "revenueChangePct" : 5.11,
+         "revenueUsd" : 1293956
+      },
+      {
+         "company" : "NCSOFT",
+         "game" : "리니지M",
+         "rank" : 7,
+         "rankChange" : "▼3",
+         "revenueChangePct" : -50.36,
+         "revenueUsd" : 1170092
+      },
+      {
+         "company" : "FUNFLY",
+         "game" : "라스트 워: 서바이벌",
+         "rank" : 8,
+         "rankChange" : "-",
+         "revenueChangePct" : -16.41,
+         "revenueUsd" : 854670
+      },
+      {
+         "company" : "Kuro Games",
+         "game" : "명조:워더링 웨이브",
+         "rank" : 9,
+         "rankChange" : "-",
+         "revenueChangePct" : 72.76,
+         "revenueUsd" : 786450
+      },
+      {
+         "company" : "Project Moon",
+         "game" : "Limbus Company",
+         "rank" : 10,
+         "rankChange" : "-",
+         "revenueChangePct" : 292.92,
+         "revenueUsd" : 711387
+      }
+   ],
+   "truePeriod" : {
+      "endDate" : "2026-07-12",
+      "month" : 7,
+      "startDate" : "2026-07-06",
+      "week" : 2,
+      "year" : 2026
+   }
+}

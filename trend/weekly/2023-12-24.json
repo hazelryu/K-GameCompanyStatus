@@ -1,0 +1,92 @@
+{
+   "filenameHint" : "24년_1월_1주차.xlsx",
+   "gpRevenueTop10" : [
+      {
+         "company" : "Kakao",
+         "game" : "오딘: 발할라 라이징",
+         "rank" : 1,
+         "rankChange" : "▲2",
+         "revenueChangePct" : 97.35,
+         "revenueUsd" : 8299525
+      },
+      {
+         "company" : "NCSOFT",
+         "game" : "리니지M",
+         "rank" : 2,
+         "rankChange" : "▼1",
+         "revenueChangePct" : -29.33,
+         "revenueUsd" : 6272846
+      },
+      {
+         "company" : "WeMade",
+         "game" : "나이트 크로우",
+         "rank" : 3,
+         "rankChange" : "▲1",
+         "revenueChangePct" : 17.44,
+         "revenueUsd" : 2916833
+      },
+      {
+         "company" : "NCSOFT",
+         "game" : "리니지2M",
+         "rank" : 4,
+         "rankChange" : "▼2",
+         "revenueChangePct" : -34.17,
+         "revenueUsd" : 2899365
+      },
+      {
+         "company" : "NCSOFT",
+         "game" : "리니지W",
+         "rank" : 5,
+         "rankChange" : "▲1",
+         "revenueChangePct" : 2.3,
+         "revenueUsd" : 2315830
+      },
+      {
+         "company" : "Roblox",
+         "game" : "로블록스",
+         "rank" : 6,
+         "rankChange" : "▲9",
+         "revenueChangePct" : 123.8,
+         "revenueUsd" : 1908158
+      },
+      {
+         "company" : "Webzen",
+         "game" : "뮤 모나크",
+         "rank" : 7,
+         "rankChange" : "▼2",
+         "revenueChangePct" : -30.59,
+         "revenueUsd" : 1667751
+      },
+      {
+         "company" : "miHoYo",
+         "game" : "원신",
+         "rank" : 8,
+         "rankChange" : "▲12",
+         "revenueChangePct" : 120.75,
+         "revenueUsd" : 1462240
+      },
+      {
+         "company" : "Kakao",
+         "game" : "아키에이지 워",
+         "rank" : 9,
+         "rankChange" : "▼1",
+         "revenueChangePct" : -9.59,
+         "revenueUsd" : 1342381
+      },
+      {
+         "company" : "Onefun",
+         "game" : "라스트 워: 서바이벌",
+         "rank" : 10,
+         "rankChange" : "▲4",
+         "revenueChangePct" : 44.02,
+         "revenueUsd" : 1232743
+      }
+   ],
+   "truePeriod" : {
+      "endDate" : "2023-12-30",
+      "month" : 12,
+      "startDate" : "2023-12-24",
+      "week" : 4,
+      "year" : 2023
+   }
+}

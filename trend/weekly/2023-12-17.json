@@ -1,0 +1,92 @@
+{
+   "filenameHint" : "23년_12월_4주차.xlsx",
+   "gpRevenueTop10" : [
+      {
+         "company" : "NCSOFT",
+         "game" : "리니지M",
+         "rank" : 1,
+         "rankChange" : "-",
+         "revenueChangePct" : -36.97,
+         "revenueUsd" : 8875860
+      },
+      {
+         "company" : "NCSOFT",
+         "game" : "리니지2M",
+         "rank" : 2,
+         "rankChange" : "▲1",
+         "revenueChangePct" : -3.22,
+         "revenueUsd" : 4404478
+      },
+      {
+         "company" : "Kakao Games",
+         "game" : "오딘: 발할라 라이징",
+         "rank" : 3,
+         "rankChange" : "▼1",
+         "revenueChangePct" : -34.17,
+         "revenueUsd" : 4205410
+      },
+      {
+         "company" : "Wemade",
+         "game" : "나이트 크로우",
+         "rank" : 4,
+         "rankChange" : "▲2",
+         "revenueChangePct" : 1.88,
+         "revenueUsd" : 2483725
+      },
+      {
+         "company" : "Webzen",
+         "game" : "뮤 모나크",
+         "rank" : 5,
+         "rankChange" : "-",
+         "revenueChangePct" : -37.73,
+         "revenueUsd" : 2402756
+      },
+      {
+         "company" : "NCSOFT",
+         "game" : "리니지W",
+         "rank" : 6,
+         "rankChange" : "▼2",
+         "revenueChangePct" : -48.37,
+         "revenueUsd" : 2263840
+      },
+      {
+         "company" : "Kakao Games",
+         "game" : "우마무스메 프리티 더비",
+         "rank" : 7,
+         "rankChange" : "▲20",
+         "revenueChangePct" : 260.25,
+         "revenueUsd" : 2100228
+      },
+      {
+         "company" : "Kakao Games",
+         "game" : "아키에이지 워",
+         "rank" : 8,
+         "rankChange" : "▲2",
+         "revenueChangePct" : -12.51,
+         "revenueUsd" : 1484843
+      },
+      {
+         "company" : "Century Games",
+         "game" : "WOS: 화이트아웃 서바이벌",
+         "rank" : 9,
+         "rankChange" : "▼1",
+         "revenueChangePct" : -32.42,
+         "revenueUsd" : 1386587
+      },
+      {
+         "company" : "37 Mobile Games",
+         "game" : "데블M",
+         "rank" : 10,
+         "rankChange" : "▲2",
+         "revenueChangePct" : -22.94,
+         "revenueUsd" : 1139662
+      }
+   ],
+   "truePeriod" : {
+      "endDate" : "2023-12-23",
+      "month" : 12,
+      "startDate" : "2023-12-17",
+      "week" : 3,
+      "year" : 2023
+   }
+}

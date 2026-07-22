@@ -1,0 +1,269 @@
+<title>트렌드 — K-Game Business Wire</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  .site-nav{background:#12161d; border-bottom:1px solid rgba(255,255,255,.08); font-family:-apple-system,BlinkMacSystemFont,"Malgun Gothic","Apple SD Gothic Neo",sans-serif; position:sticky; top:0; z-index:100;}
+  .site-nav-inner{max-width:1440px; margin:0 auto; padding:9px 22px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+  .site-nav-brand{font-size:11.5px; font-weight:700; letter-spacing:.06em; color:#8b93a3; text-transform:uppercase; white-space:nowrap;}
+  .site-nav-links{display:flex; gap:2px;}
+  .site-nav-links a{font-size:13px; font-weight:600; color:#c7cdd6; text-decoration:none; padding:6px 13px; border-radius:7px; white-space:nowrap;}
+  .site-nav-links a:hover{background:rgba(255,255,255,.08); color:#fff;}
+  .site-nav-links a.is-current{background:#FF7A1A; color:#fff;}
+  html,body{margin:0;}
+
+  :root {
+    --paper: #E7EAEE; --paper-raised: #FBFCFD; --paper-sunk: #DDE1E7; --ink: #12161D;
+    --ink-soft: #454B57; --ink-faint: #6B7280; --rule: #C7CDD6; --accent: #D9600A; --accent-soft: #FBE4D2;
+    --up: #1B8A5A; --down: #C23B3B;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --paper: #12151B; --paper-raised: #1B1F27; --paper-sunk: #0C0E12; --ink: #E9E6DC;
+      --ink-soft: #A7ADB8; --ink-faint: #767D8A; --rule: #2B303B; --accent: #FF8A3D; --accent-soft: rgba(255,138,61,.16);
+      --up: #4CC98A; --down: #FF6B6B; }
+  }
+  :root[data-theme="dark"] { --paper: #12151B; --paper-raised: #1B1F27; --paper-sunk: #0C0E12; --ink: #E9E6DC;
+    --ink-soft: #A7ADB8; --ink-faint: #767D8A; --rule: #2B303B; --accent: #FF8A3D; --accent-soft: rgba(255,138,61,.16);
+    --up: #4CC98A; --down: #FF6B6B; }
+  :root[data-theme="light"] { --paper: #E7EAEE; --paper-raised: #FBFCFD; --paper-sunk: #DDE1E7; --ink: #12161D;
+    --ink-soft: #454B57; --ink-faint: #6B7280; --rule: #C7CDD6; --accent: #D9600A; --accent-soft: #FBE4D2;
+    --up: #1B8A5A; --down: #C23B3B; }
+
+  * { box-sizing: border-box; }
+  body { background: var(--paper); color: var(--ink); font-family: "Malgun Gothic","Apple SD Gothic Neo",-apple-system,BlinkMacSystemFont,sans-serif; margin: 0; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1440px; margin: 0 auto; padding: 20px 22px 28px; }
+  .article { max-width: 900px; margin: 0 auto; }
+  hr.rule { border: none; border-top: 3px solid var(--ink); margin: 0 0 1.4rem; }
+
+  .page-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+  .page-title h1 { font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","Apple SD Gothic Neo",sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -.01em; margin: 0; }
+  .page-subtitle { font-size: 12.5px; color: var(--ink-faint); margin: 2px 0 0; }
+
+  .trend-controls { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem; background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 8px; padding: .8rem 1rem; margin-bottom: 1.4rem; }
+  .trend-controls .eyebrow { font-family: Consolas,monospace; font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); flex-basis: 100%; }
+  .trend-nav { display: flex; align-items: center; gap: .5rem; }
+  .trend-step { width: 28px; height: 28px; border-radius: 6px; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); font-size: 1rem; cursor: pointer; flex: none; }
+  .trend-step:hover:not(:disabled) { background: var(--accent-soft); }
+  .trend-step:disabled { opacity: .4; cursor: default; }
+  .period-select { font-size: .85rem; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); border-radius: 6px; padding: .4rem .6rem; font-family: Consolas,monospace; }
+  .trend-range-tag { font-size: .78rem; color: var(--ink-faint); }
+  .trend-note { flex-basis: 100%; font-size: .76rem; color: var(--ink-faint); margin: 0; }
+  .coverage-banner { font-size: .8rem; line-height: 1.6; color: var(--ink-soft); background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 8px; padding: .8rem 1rem; margin-bottom: 1.4rem; }
+  .coverage-banner b { color: var(--accent); }
+
+  .section-title { font-family: Batang,"Nanum Myeongjo",Georgia,serif; font-weight: 700; font-size: 1.1rem; color: var(--accent); margin: 1.6rem 0 .7rem; padding: 0 0 .4rem .7rem; border-bottom: 2px solid var(--accent); border-left: 4px solid var(--accent); }
+  .section-title:first-child { margin-top: 0; }
+
+  .rank-wrap { overflow-x: auto; border: 1px solid var(--rule); margin-top: .4rem; border-radius: 4px; }
+  table.rank { width: 100%; border-collapse: collapse; font-size: .85rem; min-width: 480px; }
+  table.rank th { text-align: left; font-family: Consolas,monospace; font-size: .66rem; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-faint); padding: .6rem .85rem; border-bottom: 1px solid var(--rule); background: var(--paper-sunk); }
+  table.rank td { padding: .55rem .85rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  table.rank tbody tr:last-child td { border-bottom: none; }
+  table.rank td.num { font-family: Consolas,monospace; color: var(--accent); font-weight: 600; width: 2.3rem; }
+  table.rank td.game { font-weight: 600; color: var(--ink); }
+  table.rank td.company { color: var(--ink-soft); }
+  table.rank td.metric { font-family: Consolas,monospace; text-align: right; white-space: nowrap; }
+  table.rank td.chg { font-family: Consolas,monospace; text-align: right; white-space: nowrap; }
+  table.rank td.chg.up { color: var(--up); }
+  table.rank td.chg.down { color: var(--down); }
+  table.rank td.rc { text-align: center; font-family: Consolas,monospace; width: 3rem; }
+  table.rank td.rc.up { color: var(--up); }
+  table.rank td.rc.down { color: var(--down); }
+  table.rank td.rc.new { color: var(--accent); font-weight: 700; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  @media (max-width: 760px) { .grid-2 { grid-template-columns: 1fr; } }
+
+  .no-results { font-size: .82rem; color: var(--ink-faint); padding: 1.5rem 0; text-align: center; }
+  .empty-note { font-size: .78rem; color: var(--ink-faint); padding: .8rem 0; }
+
+  footer { margin-top: 2.5rem; font-size: .76rem; color: var(--ink-faint); }
+</style>
+
+<header class="site-nav">
+  <div class="site-nav-inner">
+    <span class="site-nav-brand">VNG KR BD &middot; K-Game Intelligence</span>
+    <nav class="site-nav-links" aria-label="사이트 이동">
+      <a href="../dashboard/">회사 실적</a>
+      <a href="../news/">뉴스</a>
+      <a href="./" class="is-current">트렌드</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="article">
+    <div class="page-head">
+      <div class="page-title">
+        <h1>모바일 게임 트렌드</h1>
+        <p class="page-subtitle">나스미디어 Weekly Trend Report 기반 — 구글플레이/앱스토어 주간 매출·다운로드 Top10</p>
+      </div>
+    </div>
+    <hr class="rule" />
+
+    <div class="coverage-banner" id="coverageBanner">
+      <b>데이터 커버리지 안내</b> — 현재 총 <span id="covCount">-</span>개 주차가 등록되어 있습니다(2023년 10월 ~ 2026년 7월 사이 일부 구간). 원본 Notion 보관함의 파일명이 실제 내용과 어긋나는 경우가 다수 발견되어(예: "26년_7월_2주차.xlsx" 파일을 열어보면 실제로는 다른 주차 데이터), 파일명이 아닌 각 파일 내부의 날짜 헤더를 기준으로 주차를 재확인해 등록했습니다. 2024년 초~2025년 말 구간은 아직 부분적으로만 채워져 있으며, 전체 128주 백필은 후속 작업으로 진행할 수 있습니다.
+    </div>
+
+    <div class="trend-controls">
+      <span class="eyebrow">주간 랭킹 조회</span>
+      <div class="trend-nav">
+        <button class="trend-step" id="trendPrev" aria-label="이전 주">&#8249;</button>
+        <select id="trendWeekSelect" class="period-select" aria-label="주차 선택"></select>
+        <button class="trend-step" id="trendNext" aria-label="다음 주">&#8250;</button>
+      </div>
+      <span class="trend-range-tag" id="trendRangeTag"></span>
+      <p class="trend-note">매출은 안드로이드(구글플레이 수수료 30% 제외) / iOS 기준, Sensor Tower 자료. 표기 통화는 미화(USD).</p>
+    </div>
+
+    <div id="trendLoading" class="no-results">불러오는 중…</div>
+    <div id="trendError" class="no-results" hidden>이 주차 데이터를 불러오지 못했습니다.</div>
+
+    <div id="trendContent" hidden>
+      <div class="grid-2">
+        <div>
+          <h2 class="section-title">구글 플레이스토어 · 매출 Top10</h2>
+          <div class="rank-wrap"><table class="rank" id="gpRevTable"><thead><tr><th>#</th><th>게임</th><th>게임사</th><th>전주比</th><th>금주 매출</th><th>변화</th></tr></thead><tbody></tbody></table></div>
+        </div>
+        <div id="gpDlBlock">
+          <h2 class="section-title">구글 플레이스토어 · 다운로드 Top10</h2>
+          <div class="rank-wrap"><table class="rank" id="gpDlTable"><thead><tr><th>#</th><th>게임</th><th>게임사</th><th>전주比</th><th>금주 다운로드</th><th>변화</th></tr></thead><tbody></tbody></table></div>
+        </div>
+      </div>
+      <div class="grid-2" id="asBlockWrap">
+        <div id="asRevBlock">
+          <h2 class="section-title">애플 앱스토어 · 매출 Top10</h2>
+          <div class="rank-wrap"><table class="rank" id="asRevTable"><thead><tr><th>#</th><th>게임</th><th>게임사</th><th>전주比</th><th>금주 매출</th><th>변화</th></tr></thead><tbody></tbody></table></div>
+        </div>
+        <div id="asDlBlock">
+          <h2 class="section-title">애플 앱스토어 · 다운로드 Top10</h2>
+          <div class="rank-wrap"><table class="rank" id="asDlTable"><thead><tr><th>#</th><th>게임</th><th>게임사</th><th>전주比</th><th>금주 다운로드</th><th>변화</th></tr></thead><tbody></tbody></table></div>
+        </div>
+      </div>
+      <p class="empty-note" id="partialNote" hidden>※ 이 주차는 매출 Top10만 확보되어 있습니다(다운로드/앱스토어 데이터는 추가 백필 시 채워질 예정).</p>
+    </div>
+
+    <footer>VNG KR BD Intelligence &middot; 원본: 나스미디어 모바일마케팅실 Weekly Trend Report (Sensor Tower 자료 기반)</footer>
+  </div>
+</div>
+
+<script>
+(function(){
+  var TREND_BASE = new URL("weekly/", document.baseURI).href;
+  var weeks = []; // newest first, each {startDate,endDate,year,month,week,label}
+  var cache = {};
+  var currentIdx = 0;
+
+  function esc(s){ return String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+  function fmtNum(n){ return n == null ? "-" : Number(n).toLocaleString("en-US"); }
+  function fmtUsd(n){ return n == null ? "-" : "$" + Number(n).toLocaleString("en-US"); }
+  function fmtPct(n){ return (n == null || isNaN(n)) ? "-" : (n > 0 ? "+" : "") + Number(n).toFixed(1) + "%"; }
+  function pctClass(n){ if(n == null || isNaN(n)) return ""; return n > 0 ? "up" : (n < 0 ? "down" : ""); }
+  function rcClass(rc){
+    if(!rc) return "";
+    if(/^NEW/i.test(rc)) return "new";
+    if(rc.indexOf("▲") >= 0) return "up";
+    if(rc.indexOf("▼") >= 0) return "down";
+    return "";
+  }
+
+  function renderTable(tbodySelector, rows, metricKey, changeKey){
+    var tbody = document.querySelector(tbodySelector + " tbody");
+    if(!rows || !rows.length){ tbody.innerHTML = ""; return false; }
+    tbody.innerHTML = rows.map(function(r){
+      var metric = metricKey === "revenueUsd" ? fmtUsd(r[metricKey]) : fmtNum(r[metricKey]);
+      var chg = fmtPct(r[changeKey]);
+      return "<tr>" +
+        '<td class="num">' + r.rank + "</td>" +
+        '<td class="game">' + esc(r.game) + "</td>" +
+        '<td class="company">' + esc(r.company || "-") + "</td>" +
+        '<td class="rc ' + rcClass(r.rankChange) + '">' + esc(r.rankChange || "-") + "</td>" +
+        '<td class="metric">' + metric + "</td>" +
+        '<td class="chg ' + pctClass(r[changeKey]) + '">' + chg + "</td>" +
+        "</tr>";
+    }).join("");
+    return true;
+  }
+
+  function renderWeek(data){
+    document.getElementById("trendLoading").hidden = true;
+    document.getElementById("trendError").hidden = true;
+    document.getElementById("trendContent").hidden = false;
+
+    renderTable("#gpRevTable", data.gpRevenueTop10, "revenueUsd", "revenueChangePct");
+    var hasDl = renderTable("#gpDlTable", data.gpDownloadTop10, "downloads", "downloadChangePct");
+    var hasAsRev = renderTable("#asRevTable", data.asRevenueTop10, "revenueUsd", "revenueChangePct");
+    var hasAsDl = renderTable("#asDlTable", data.asDownloadTop10, "downloads", "downloadChangePct");
+
+    document.getElementById("gpDlBlock").style.display = hasDl ? "" : "none";
+    document.getElementById("asBlockWrap").style.display = (hasAsRev || hasAsDl) ? "" : "none";
+    document.getElementById("asRevBlock").style.display = hasAsRev ? "" : "none";
+    document.getElementById("asDlBlock").style.display = hasAsDl ? "" : "none";
+    document.getElementById("partialNote").hidden = hasDl;
+  }
+
+  function renderError(msg){
+    document.getElementById("trendLoading").hidden = true;
+    document.getElementById("trendContent").hidden = true;
+    var el = document.getElementById("trendError");
+    el.hidden = false;
+    el.textContent = msg || "이 주차 데이터를 불러오지 못했습니다.";
+  }
+
+  function loadWeek(idx){
+    idx = Math.max(0, Math.min(weeks.length - 1, idx));
+    currentIdx = idx;
+    var w = weeks[idx];
+    document.getElementById("trendWeekSelect").value = String(idx);
+    document.getElementById("trendPrev").disabled = (idx >= weeks.length - 1);
+    document.getElementById("trendNext").disabled = (idx <= 0);
+    document.getElementById("trendRangeTag").textContent = w.startDate + " ~ " + w.endDate;
+
+    if(cache[w.startDate]){ renderWeek(cache[w.startDate]); return; }
+
+    document.getElementById("trendContent").hidden = true;
+    document.getElementById("trendError").hidden = true;
+    document.getElementById("trendLoading").hidden = false;
+
+    fetch(TREND_BASE + w.startDate + ".json").then(function(res){
+      if(!res.ok) throw new Error("HTTP " + res.status);
+      return res.json();
+    }).then(function(data){
+      cache[w.startDate] = data;
+      if(weeks[currentIdx] && weeks[currentIdx].startDate === w.startDate) renderWeek(data);
+    }).catch(function(){
+      if(weeks[currentIdx] && weeks[currentIdx].startDate === w.startDate) renderError();
+    });
+  }
+
+  function init(){
+    fetch(TREND_BASE + "index.json").then(function(res){
+      if(!res.ok) throw new Error("HTTP " + res.status);
+      return res.json();
+    }).then(function(manifest){
+      weeks = manifest.weeks || [];
+      document.getElementById("covCount").textContent = weeks.length;
+      if(weeks.length === 0){ renderError("아직 등록된 주차 데이터가 없습니다."); return; }
+
+      var sel = document.getElementById("trendWeekSelect");
+      var byYear = {};
+      weeks.forEach(function(w, i){
+        (byYear[w.year] = byYear[w.year] || []).push({ i: i, label: w.label });
+      });
+      var years = Object.keys(byYear).sort(function(a,b){ return b - a; });
+      sel.innerHTML = years.map(function(y){
+        var opts = byYear[y].map(function(o){ return '<option value="' + o.i + '">' + esc(o.label) + "</option>"; }).join("");
+        return '<optgroup label="' + y + '년">' + opts + "</optgroup>";
+      }).join("");
+
+      sel.addEventListener("change", function(){ loadWeek(parseInt(sel.value, 10)); });
+      document.getElementById("trendPrev").addEventListener("click", function(){ loadWeek(currentIdx + 1); });
+      document.getElementById("trendNext").addEventListener("click", function(){ loadWeek(currentIdx - 1); });
+      loadWeek(0);
+    }).catch(function(){
+      renderError("주차 목록을 불러오지 못했습니다 (weekly/index.json 확인 필요).");
+    });
+  }
+
+  init();
+})();
+</script>
